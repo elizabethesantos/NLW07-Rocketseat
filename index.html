@@ -20,7 +20,7 @@
         <img
          src="http://lorempixel.com.br/185/185/people/" alt="Foto pessoal"/>
       </div>
-      <h1>Elizabeth Santos</h1>
+      <h1 id="userName">Elizabeth Santos</h1>
       <a href="https://github.com/elizabethesantos/" target="_blank">
         <img src="images/github.svg" alt="logo github">
         elizabethesantos</a>
@@ -29,23 +29,23 @@
           Uma estudante focada em aprender e adquirir novos conhecimentos de programação web                  
         </p>
 
-        <ul>
-          <li>
+        <ul id="socialLinks">
+          <li class="youtube">
             <a href="https://www.youtube.com/channel/UCDlV6N03aHS9CmdZEmkqr9w">
               <img src="images/youtube.svg" alt="ícone youtube" target="_blank"/>
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a href="https://m.facebook.com/elizabeth.campbell.752487" target="_blank">
               <img src="images/facebook.svg" alt="ícone facebook" />
             </a>
           </li>
-          <li>
+          <li class="instagram">
             <a href="https://www.instagram.com/elizabethsantos2487/" target="_blank">
               <img src="images/instagram.svg" alt="ícone instagram" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https://twitter.com/Elizabethsan24" target="_blank">
               <img src="images/twitter.svg" alt="ícone twitter" />
             </a>
@@ -53,5 +53,28 @@
         </ul>
     </div>
   </main>
+
+  <script>
+    const linksSocialMedia = {
+      github : 'elizabethesantos',
+      youtube : 'UCDlV6N03aHS9CmdZEmkqr9w',
+      facebook : 'elizabeth.campbell.752487',
+      instagram : 'elizabethsantos2487',
+      twitter : 'Elizabethsan24'
+    }
+
+    function changeSocialMediaLinks(){
+      for (let li of socialLinks.children){
+       const social = li.getAttribute('class')
+
+        li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+        //'https://www.youtube.com/jakelinygracielly'
+       // alert(li.children[0].href)
+      }
+    }
+
+    //changeSocialMediaLinks()
+
+  </script>
 </body>
 </html>
